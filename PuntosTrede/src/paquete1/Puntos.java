@@ -5,6 +5,7 @@
 
 package paquete1;
 import java.lang.Math;
+import java.util.Objects;
 public class Puntos {
 	private double x;
 	private double y;
@@ -103,6 +104,28 @@ public class Puntos {
 		double resultado;
 		resultado = Math.sqrt( getSquare( (this.getX() - otro.getX() ) ) + getSquare( (this.getY() - otro.getY()) ) );
 		return resultado;
+	}
+
+
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(x, y);
+	}
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Puntos other = (Puntos) obj;
+		return Double.doubleToLongBits(x) == Double.doubleToLongBits(other.x)
+				&& Double.doubleToLongBits(y) == Double.doubleToLongBits(other.y);
 	}
 	
 	

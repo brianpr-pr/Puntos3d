@@ -20,11 +20,25 @@ import java.util.*;
 import java.lang.Math;
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { /*
 		Puntos3d uno = new Puntos3d(5,7,8);
 		Puntos3d dos = new Puntos3d(2,6,9);
 		System.out.println(uno.getX());
 		System.out.println(uno.distanciaEcludia(dos));
+		*/
+		Puntos unoa = new Puntos(2,2);
+		Puntos unob = new Puntos(2,2);
+		
+		
+		Puntos3d uno = new Puntos3d(2,2,2);
+		Puntos3d dos = new Puntos3d(2,2,3);
+	
+		Suceso a = new Suceso(2,2,2, 5, "a");
+		Suceso b = new Suceso(2,2,2, 5, "aa");
+		
+		
+		
+		System.out.println(a.equals(b));
 		
 	}
 

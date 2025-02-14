@@ -19,18 +19,16 @@ Recuerda que la clase Punto la hicimos en la unidad anterior
 
 package paquete1;
 
+import java.util.Objects;
+
 public class Puntos3d extends Puntos {
 	private double z;
-	
 	
 	public Puntos3d(double x, double y, double z) {
 		super(x, y);
 		setZ(z);
 		
 	}
-
-	
-	
 	
 
 	public double getZ() {
@@ -42,10 +40,6 @@ public class Puntos3d extends Puntos {
 		this.z = z;
 	}
 
-
-
-
-
 	
 	public double distanciaEcludia(Puntos3d otro) {
 		double resultado;
@@ -54,13 +48,38 @@ public class Puntos3d extends Puntos {
 	}
 
 
-
-
-
 	@Override
 	public String toString() {
 		return "Puntos3d [getZ()=" + getZ() + ", getX()=" + getX() + ", getY()=" + getY() + "]";
 	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		
+		if(super.equals(obj) ) {
+			if(obj instanceof Puntos3d) {
+				Puntos3d desconocido = (Puntos3d) obj;
+				if(desconocido.getZ() == this.getZ()) {
+					return true;
+					
+				}
+				return false;
+			}
+			return false;
+			
+		}
+		else{
+			return false;
+	    }
+	}
+
+
+
+	
+
+
+	
 
 	
 
